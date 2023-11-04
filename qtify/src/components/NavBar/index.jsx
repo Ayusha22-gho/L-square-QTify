@@ -6,7 +6,11 @@ export class NavBar extends Component {
   render() {
     return (
       <div className="navbar">
-        <img src = 'logo.png' alt = "qtify" width = {"90px"} height = {100}/>
+        <div className="icon">
+          <img src="logo.png" alt="qtify" width={"60px"} height={24} />
+          <img src="icon.png" alt="icon" className="music-icon" />
+        </div>
+
         <Search />
         <Button>Give Feedback</Button>
       </div>

@@ -7,10 +7,16 @@
     width: 100vw;
     padding: 0 32px;
 }
-.search input {
-    border-radius: 1px;
-    min-width: 500px;
+.icon {
+    display: flex;
+    position: relative;
 }
+.music-icon {
+   position: relative;
+   top: -10px;
+   left :-67px
+}
+
 
 
 
