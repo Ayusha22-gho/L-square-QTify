@@ -4,6 +4,7 @@
 .top-heading {
     display: flex;
     justify-content: space-between;
+    padding: 10px 0;
 
 }
 .top-heading h1 {
