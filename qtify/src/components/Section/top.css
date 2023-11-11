@@ -1,0 +1,26 @@
+.top-container {
+    padding: 10px 32px;
+}
+.top-heading {
+    display: flex;
+    justify-content: space-between;
+
+}
+.top-heading h1 {
+    font-size: 20px;
+    color: var(--white);
+    margin-left: 10px;
+}
+.top-heading p {
+    color: var(--primary);
+    width: 90px;
+    font-size: 20px;
+    font-weight: 600;
+   
+}
+.top-card {
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 10px;
+    column-gap: 42px;
+}
