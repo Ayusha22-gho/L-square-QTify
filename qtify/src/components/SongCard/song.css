@@ -1,0 +1,30 @@
+.song-card{
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+.song-image-section {
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    overflow: hidden;
+}
+.song-card-img {
+    width: 100%;
+    height: 100%; 
+    object-fit: cover;
+}
+.song-content {
+    background-color: white;
+    padding: 8px;
+}
+.song-content span {
+    background-color: black;
+    color: white;
+    padding: 4px 8px;
+    border-radius: 10px;
+    font-size: 14px;
+}
+.song-title{
+    color: white;
+}

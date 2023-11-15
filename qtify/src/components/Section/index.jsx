@@ -19,7 +19,7 @@ export default function Index({ title, data }) {
         </p>
       </div>
       {isCollapsed ? (
-        <Carousel data = {data}/>
+        <Carousel data = {data} isSongData = {false}/>
       ) : (
         <div className="top-card">
           {data.map((el) => (

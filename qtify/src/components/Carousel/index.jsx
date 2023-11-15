@@ -1,18 +1,19 @@
-import React from 'react'
-import { Virtual, Navigation, Pagination } from 'swiper/modules';
-import { Swiper, SwiperSlide } from 'swiper/react';
-import Card from "../Card"
-import "./carousel.css"
+import React from "react";
+import { Virtual, Navigation, Pagination } from "swiper/modules";
+import { Swiper, SwiperSlide } from "swiper/react";
+import Card from "../Card";
+import SongCard from "../SongCard";
+import "./carousel.css";
 
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/pagination';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
 
-export default function index({data}) {
+export default function index({ data, songs, isSongData }) {
   return (
-    <div className='carousel-container'>
-    <Swiper
+    <div className="carousel-container">
+      <Swiper
         modules={[Virtual, Navigation, Pagination]}
         //onSwiper={setSwiperRef}
         slidesPerView={7}
@@ -22,17 +23,31 @@ export default function index({data}) {
         //   type: 'fraction',
         // }}
         // navigation={true}
-        navigation = {{nextEl : ".arrow-right", prevEl:".arrow-left"}}
+        navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
         virtual
       >
-      
-         {data.map(el => <SwiperSlide key={el.id}>
-            <Card image={el.image} follows={el.follows} title={el.title} />
-         </SwiperSlide>)}
-         
+        {isSongData
+          ? songs.map((song) => (
+              <SwiperSlide key = {song.id}>
+                <SongCard
+                  image={song.image}
+                  likes={song.likes}
+                  title={song.title}
+                />
+              </SwiperSlide>
+            ))
+          : data.map((el) => (
+              <SwiperSlide key={el.id}>
+                <Card image={el.image} follows={el.follows} title={el.title} />
+              </SwiperSlide>
+            ))}
       </Swiper>
-      <div className="arrow-left arrow"><img src = "leftnav.png" alt = "left_navigation"/></div>
-      <div className="arrow-right arrow"><img src = "rightNav.png" alt = "right_navigation"/></div>
+      <div className="arrow-left arrow">
+        <img src="leftnav.png" alt="left_navigation" />
       </div>
-  )
+      <div className="arrow-right arrow">
+        <img src="rightNav.png" alt="right_navigation" />
+      </div>
+    </div>
+  );
 }
