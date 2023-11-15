@@ -38,7 +38,7 @@ function App() {
       <Hero/>
       <Section title = "Top Albums" data = {topData}/>
       <Section title = "New Albums" data = {newAlbums}/>
-      <FilterSection songs = {songs} genres = {genres}/>
+      <FilterSection title = "Songs" songs = {songs} genres = {genres}/>
     </div>
   )
 }

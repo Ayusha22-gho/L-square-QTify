@@ -7,7 +7,7 @@ import TabPanel from "@mui/lab/TabPanel";
 import Carousel from "../Carousel";
 //import Card from '../Card'
 import "./filter.css";
-export default function Index({ songs, genres }) {
+export default function Index({ title, songs, genres }) {
   const [value, setValue] = React.useState("all");
 
   const handleChange = (event, newValue) => {
@@ -21,7 +21,7 @@ export default function Index({ songs, genres }) {
   return (
     <div className="songs-contaner">
       <div className="songs-heading">
-        <h1>Songs</h1>
+        <h1>{title}</h1>
       </div>
 
       <Box sx={{ width: "100%", typography: "body1" }}>
