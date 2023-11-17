@@ -1,7 +1,7 @@
 import React from "react";
 import "./card.css";
 
-export default function index({image,follows,title}) {
+export default function index({image,follows,title,likes}) {
   return (
     <div className="card">
       <div className="card-image-section">
@@ -15,7 +15,9 @@ export default function index({image,follows,title}) {
           />
         </div>
         <div className="content">
-          <span>{follows} follows</span>
+          {
+            follows ?  <span>{follows} follows</span> :  <span>{likes} likes</span>
+          }
         </div>
       </div>
       <div className="title">

@@ -2,7 +2,6 @@ import React from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../Card";
-import SongCard from "../SongCard";
 import "./carousel.css";
 
 // Import Swiper styles
@@ -29,7 +28,7 @@ export default function index({ data, songs, isSongData }) {
         {isSongData
           ? songs.map((song) => (
               <SwiperSlide key = {song.id}>
-                <SongCard
+                <Card
                   image={song.image}
                   likes={song.likes}
                   title={song.title}

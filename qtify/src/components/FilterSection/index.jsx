@@ -34,7 +34,7 @@ export default function Index({ title, songs, genres }) {
               <Tab
                 label="All"
                 value="all"
-                sx={{ color: "white", fontWeight: "600" }}
+                sx={{ color: "white", fontWeight: "600"}}
               />
               {genres.map((element) => (
                 <Tab
