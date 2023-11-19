@@ -47,6 +47,11 @@ h5,
 h6 {
   overflow-wrap: break-word;
 }
+hr {
+  border-top: 1px solid var(--primary);
+ margin-top: 20px;
+ margin-bottom: 20px;
+}
 #root,
 #__next {
   isolation: isolate;

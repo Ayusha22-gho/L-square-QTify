@@ -7,6 +7,7 @@ export default function Index({ title, data }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
+    <>
     <div className="top-container">
       <div className="top-heading">
         <h1>{title}</h1>
@@ -29,6 +30,9 @@ export default function Index({ title, data }) {
           ))}
         </div>
       )}
+     
     </div>
+    <hr/>
+    </>
   );
 }

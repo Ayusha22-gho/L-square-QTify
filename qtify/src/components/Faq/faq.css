@@ -1,0 +1,21 @@
+.faq-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.faq-heading {
+    font-size: 50px;
+    font-weight: 600;
+    color: var(--white);
+}
+
+.faq-accordian {
+    padding:50px 100px;
+    width :80%;
+   
+}
+.accordian-container{
+    background-color: var(--black);
+}

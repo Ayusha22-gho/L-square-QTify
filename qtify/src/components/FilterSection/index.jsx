@@ -19,6 +19,7 @@ export default function Index({ title, songs, genres }) {
   };
 
   return (
+    <>
     <div className="songs-contaner">
       <div className="songs-heading">
         <h1>{title}</h1>
@@ -70,5 +71,7 @@ export default function Index({ title, songs, genres }) {
         </TabContext>
       </Box>
     </div>
+    <hr/>
+    </>
   );
 }
