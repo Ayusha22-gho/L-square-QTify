@@ -18,3 +18,11 @@
 .tab-button {
     color: var(--white);
 }
+.tab-colour {
+    color: var(--white) !important;
+    font-weight: 600 !important;
+}
+.filtred-songs {
+    padding: 10px;
+    margin-right: 10px;
+}

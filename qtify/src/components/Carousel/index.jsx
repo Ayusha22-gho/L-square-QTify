@@ -9,7 +9,7 @@ import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-export default function index({ data, songs, isSongData }) {
+export default function index({ navId,data, songs, isSongData }) {
   return (
     <div className="carousel-container">
       <Swiper
@@ -22,7 +22,7 @@ export default function index({ data, songs, isSongData }) {
         //   type: 'fraction',
         // }}
         // navigation={true}
-        navigation={{ nextEl: ".arrow-right", prevEl: ".arrow-left" }}
+        navigation={{ nextEl: `.arrow-right-${navId}`, prevEl: `.arrow-left-${navId}` }}
         virtual
       >
         {isSongData
@@ -35,16 +35,17 @@ export default function index({ data, songs, isSongData }) {
                 />
               </SwiperSlide>
             ))
-          : data.map((el) => (
+          :
+           data.map((el) => (
               <SwiperSlide key={el.id}>
                 <Card image={el.image} follows={el.follows} title={el.title} />
               </SwiperSlide>
             ))}
       </Swiper>
-      <div className="arrow-left arrow">
+      <div className={`arrow-left-${navId} arrow-left arrow`}>
         <img src="leftnav.png" alt="left_navigation" />
       </div>
-      <div className="arrow-right arrow">
+      <div className= {`arrow-right-${navId} arrow-right arrow`}>
         <img src="rightNav.png" alt="right_navigation" />
       </div>
     </div>

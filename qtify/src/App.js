@@ -12,6 +12,7 @@ function App() {
   const [topData, setTopData] = useState([]);
   const [newAlbums, setNewAlbums] = useState([]);
   const [songs,setSongs] = useState([]);
+  const [filteredSongs, setFilteredSongs] = useState([]);
   const [genres,setGenres] = useState([]);
   const [faqData, setFaqData] = useState([]);
 
@@ -25,7 +26,8 @@ function App() {
       setTopData(topResponse.data);
       setNewAlbums(newResponse.data)
       setSongs(songResponse.data)
-      setGenres(genresResponse.data.data);
+      setFilteredSongs(songResponse.data);
+      setGenres([{"key":"all","label" : "All"}, ...genresResponse.data.data]);
       setFaqData(faqResponse.data.data)
     }catch (e){
 
@@ -40,9 +42,17 @@ function App() {
     <div>
       <NavBar/>
       <Hero/>
-      <Section title = "Top Albums" data = {topData}/>
-      <Section title = "New Albums" data = {newAlbums}/>
-      <FilterSection title = "Songs" songs = {songs} genres = {genres}/>
+      <Section navId="ta" title = "Top Albums" data = {topData}/>
+      <Section navId = "na" title = "New Albums" data = {newAlbums}/>
+      <FilterSection title = "Songs" songs = {filteredSongs} genres = {genres}
+      filterFuncton = {(genre) => {
+        if(genre === 'all'){
+          setFilteredSongs(songs)
+        }else{
+          setFilteredSongs(songs.filter(song => song.genre.key === genre))
+        }
+      }}
+      />
       <Faq faqData = {faqData}/>
     </div>
   )

@@ -3,7 +3,7 @@ import "./top.css";
 import Card from "../Card";
 import Carousel from "../Carousel"
 
-export default function Index({ title, data }) {
+export default function Index({ navId, title, data }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
 
   return (
@@ -20,7 +20,7 @@ export default function Index({ title, data }) {
         </p>
       </div>
       {isCollapsed ? (
-        <Carousel data = {data} isSongData = {false}/>
+        <Carousel data = {data} isSongData = {false} navId={navId}/>
       ) : (
         <div className="top-card">
           {data.map((el) => (
