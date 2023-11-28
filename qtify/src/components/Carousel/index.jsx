@@ -2,6 +2,7 @@ import React from "react";
 import { Virtual, Navigation, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import Card from "../Card";
+import Tooltip from '../Tooltip'
 import "./carousel.css";
 
 // Import Swiper styles
@@ -39,6 +40,7 @@ export default function index({ navId,data, songs, isSongData }) {
            data.map((el) => (
               <SwiperSlide key={el.id}>
                 <Card image={el.image} follows={el.follows} title={el.title} />
+                <Tooltip message={el.songs.length}/>
               </SwiperSlide>
             ))}
       </Swiper>

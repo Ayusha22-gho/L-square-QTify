@@ -1,4 +1,12 @@
-
+.swiper-slide {
+    position: relative;
+}
+.swiper-slide:hover .tooltip-class{
+    opacity: 1;
+}
+.swiper{
+    padding-top: 15px !important
+} 
 
 .carousel-container{
     position: relative;

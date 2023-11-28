@@ -26,3 +26,9 @@
     row-gap: 10px;
     column-gap: 42px;
 }
+.card-container{
+    position: relative;
+}
+.card-container:hover .tooltip-class{
+opacity: 1;
+}

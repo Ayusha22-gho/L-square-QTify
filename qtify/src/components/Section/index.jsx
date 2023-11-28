@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./top.css";
 import Card from "../Card";
 import Carousel from "../Carousel"
+import Tooltip from '../Tooltip'
 
 export default function Index({ navId, title, data }) {
   const [isCollapsed, setIsCollapsed] = useState(false);
@@ -14,6 +15,7 @@ export default function Index({ navId, title, data }) {
         <p
           onClick={() => {
             setIsCollapsed(!isCollapsed);
+            
           }}
         >
           {isCollapsed ? "Show All" : "Collapse"}
@@ -26,6 +28,7 @@ export default function Index({ navId, title, data }) {
           {data.map((el) => (
             <div className="card-container" key={el.id}>
               <Card image={el.image} follows={el.follows} title={el.title} />
+              <Tooltip message={el.songs.length} />
             </div>
           ))}
         </div>
